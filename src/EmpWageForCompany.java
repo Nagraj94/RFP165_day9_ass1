@@ -1,11 +1,13 @@
 public class EmpWageForCompany {
     final static int EMP_IS_FULL_DAY = 1;
     final static int EMP_IS_HALF_DAY = 2;
+    static int WORKING_DAYS_PER_MONTH = 20;
     static int WAGES_PER_HRS = 20;
 
     public static void main(String[] args) {
         int empHrs = 0;
         int dailyWages = 0;
+        int wagesPerMonth = 0;
         int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
         switch (empCheck){
             case  EMP_IS_FULL_DAY :
@@ -20,7 +22,9 @@ public class EmpWageForCompany {
                 System.out.println("employee is absent");
                 empHrs = 0;break;
         }
-        dailyWages = empHrs*WAGES_PER_HRS;
+        dailyWages = empHrs * WAGES_PER_HRS;
         System.out.println("employee daily wages is: "+ dailyWages);
+        wagesPerMonth = dailyWages * WORKING_DAYS_PER_MONTH;
+        System.out.println("employee wages per month is: "+ wagesPerMonth);
     }
 }
