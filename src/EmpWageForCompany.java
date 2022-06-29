@@ -5,14 +5,13 @@ public class EmpWageForCompany {
     static int WORKING_DAYS_PER_MONTH = 20;
     static int WAGES_PER_HRS = 20;
 
-
-    public static void main(String[] args) {
+    public static void computeEmpWages(){
         int empHrs = 0;
         int dailyWages = 0;
         int wagesPerMonth = 0;
         int totalDays = 0;
         int totalHrs = 0;
-        while (totalDays <= WORKING_DAYS_PER_MONTH && totalHrs <= TOTAL_WORKING_HRS) {
+        while (totalDays < WORKING_DAYS_PER_MONTH && totalHrs < TOTAL_WORKING_HRS) {
             totalDays ++;
             int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
             switch (empCheck) {
@@ -34,5 +33,9 @@ public class EmpWageForCompany {
         }
         wagesPerMonth = totalHrs * WORKING_DAYS_PER_MONTH;
         System.out.println("employee wages per month is: "+ wagesPerMonth);
+    }
+
+    public static void main(String[] args) {
+       computeEmpWages();
     }
 }
